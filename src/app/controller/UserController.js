@@ -12,11 +12,19 @@ class UserController {
 
     });
 
-    if (!(await schema.isValid(req.body))) {
-      return res.status(400).json({ error: 'validation error' });
-    }
+    // if (!(await schema.isValid(req.body))) {
+    //   return res.status(400).json({ error: 'validation error' });
+    // }
 
-     const user = await User.create(req.body);
+     const user  = await User.create(req.body, {
+        include: [
+          {
+            model: File,
+            as: 'avatar',
+            attributes: ['id', 'path', 'url'],
+          },
+        ],
+     });
 
     return res.json(user);
   }
