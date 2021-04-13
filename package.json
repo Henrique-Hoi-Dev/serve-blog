@@ -16,9 +16,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "node src/server.js",
-    "start": "sequelize db:migrate && nodemon src/server.js",
-    "serve": "nodemon src/server.js"
+    "serve": "sequelize db:migrate && nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "devDependencies": {
     "eslint": "^7.4.0",

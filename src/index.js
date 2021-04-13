@@ -1,7 +1,7 @@
 import express from 'express';
-import routes from './routes';
 import path from 'path';
 import cors from 'cors';
+import router from './routes';
 
 import './database';
 
@@ -23,7 +23,8 @@ class App {
   }
 
   routes() {
-    this.server.use(routes);
+    this.server.use(router);
+    this.server.listen(process.env.PORT || 3333);
   }
 }
 

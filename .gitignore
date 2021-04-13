@@ -6,4 +6,5 @@ node_modules
 
 tmp
 .pnp.js
+.env
 
